@@ -1,12 +1,11 @@
 Package: bibou
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Package bibou aims at formatting and using bibliographic data in a tidy way to help produce statistical and graphical analyses of a bibliometric corpus.
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Lise Vaudor
+Maintainer: Lise Vaudor <lise.vaudor@ens-lyon.fr>
+Description: The bibou package can be used to format bibliographic exports from web of science. It helps formatting these exports into tables, either with one row per document (tib_doc), one row per document*author (tib_doc_author), one row per document*keyword (tib_doc_keyword) or one row per document*word of abstract (tib_doc_word).    It builds on packages bibliometrix, tidytext, and mixr.
+License: GPL-2
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.3
