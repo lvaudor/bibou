@@ -8,7 +8,7 @@ This package aims at formatting and using bibliographic data to produce a statis
 
 Install with 
 
-```{r}
+```{r install_bibou, eval=FALSE}
 remotes::install_github("lvaudor/bibou")
 ```
 
