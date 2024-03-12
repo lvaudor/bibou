@@ -4,10 +4,25 @@
     <loc>/404.html</loc>
   </url>
   <url>
+    <loc>/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>/articles/produce_and_display_metrics.html</loc>
+  </url>
+  <url>
+    <loc>/articles/search_and_format.html</loc>
+  </url>
+  <url>
     <loc>/authors.html</loc>
   </url>
   <url>
     <loc>/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/bib_add_LCT.html</loc>
+  </url>
+  <url>
+    <loc>/reference/bib_merge_files.html</loc>
   </url>
   <url>
     <loc>/reference/bib_remove_duplicates.html</loc>
