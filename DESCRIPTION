@@ -5,7 +5,8 @@ Version: 0.1.0
 Author: Lise Vaudor
 Maintainer: Lise Vaudor <lise.vaudor@ens-lyon.fr>
 Description: The bibou package can be used to format bibliographic exports from web of science. It helps formatting these exports into tables, either with
-    - one row per document (tib_doc), one row per document*author (tib_doc_author),
+    - one row per document (tib_doc), 
+    - one row per document*author (tib_doc_author),
     - one row per document*keyword (tib_doc_keyword) or
     - one row per document*word of abstract (tib_doc_word).    
     It builds on packages bibliometrix, tidytext, and mixr.
