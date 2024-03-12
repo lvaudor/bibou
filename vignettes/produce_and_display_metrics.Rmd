@@ -1,0 +1,123 @@
+---
+title: "Produce and display basic bibliometrics"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Produce and display basic bibliometrics}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(bibou)
+library(bibliometrix)
+library(tidyverse)
+```
+
+# Table tib_doc
+
+The table produced by `bib_tib_doc()` is structured as **one row = one document**. 
+
+```{r get_tib_doc, warning=FALSE, message=FALSE}
+tib_doc=bib_tib_doc("data/savedrecs_clean.bib")
+```
+
+Based on this table we can produce a variety of **tabular and graphical results** using tidy tools (especially `dplyr` and `ggplot2`). For instance, we can study the number of documents per publication year, or type, or source.
+
+## Example: number of documents per publication year
+
+```{r nb_docs_per_PY, fig.height=3, fig.width=5}
+tib=tib_doc %>% 
+  mutate(ntot=n()) %>% 
+  group_by(PY,ntot) %>% 
+  summarise(n=n(),.groups="drop") %>% 
+  mutate(prop=n/ntot)
+ggplot(tib, aes(x=PY, y = prop))+
+  geom_col()
+```
+
+## Example: number of documents per publication year and source
+
+Here, we will show the **number of publications per year and per journal** (showing only journals that account for a total of more than 25 documents).
+
+```{r nb_docs_per_PY_and_SO, fig.height=5, fig.width=5}
+tib=tib_doc %>% 
+  group_by(SO) %>% 
+  mutate(ntot=n()) %>% 
+  group_by(PY,SO,ntot) %>% 
+  summarise(n=n(),.groups="drop") %>% 
+  mutate(prop=n/ntot) %>% 
+  filter(ntot>=50)
+ggplot(tib, aes(x=PY, y = prop,fill=SO))+
+  geom_col()+
+  facet_wrap(facets=vars(SO),ncol=1)+
+  theme(legend.position="none")
+```
+
+# Table tib_doc_author
+
+
+The table produced by `bib_tib_doc_author()` is structured as **one row = one document*author**. 
+
+```{r tib_doc_author}
+tib_doc_author=bib_tib_doc_author(tib_doc)
+```
+
+It includes all descriptors originally in `tib_doc`, with
+
+- a modified `AU` descriptor (with only one author name per row)
+- an additional `AU_rank` descriptor (with author ranks from 1 to N where N is the number of authors for a particular document)
+- an addition `AU_weight` descriptor 
+
+The AU_weight descriptor for the $i^{th}$ author of a document with $N$ authors is equal to
+
+$$\forall i \in [1,...,N]\space W_i=(N-i+1)/\frac{2}{N(N+1)}$$
+Hence for 
+
+- a document with a single author (**N=1**)
+  + $W_1=1$
+- a document with two authors (**N=2**)
+  + $W_1=0.666$ for the first author
+  + $W_2=0.333$ for the second author
+- a document with three authors (**N=3**)
+  + $W_1=0.5$ for the first author
+  + $W_2=0.333$ for the second author
+  + $W_3=0.167$ for the third author
+- etc.
+
+This table enables to produce all kinds of summary statistics and graphics.
+
+## Example: number of documents per author
+
+For instance, we can display the **distribution of number of documents per author** (possibly weighted by the author's rank in each publication's authors list):
+
+```{r nb_docs_per_author}
+tib=tib_doc_author %>% 
+  group_by(AU) %>% 
+  summarise(ndocs_weighted=sum(AU_rank),
+            ndocs=n())
+ggplot(tib, aes(x=ndocs_weighted))+
+  geom_histogram()+
+  scale_x_sqrt(breaks=c(1,5,10,20,40,80))
+```
+
+
+## Example: authors with the most documents
+
+The table calculated above makes it possible to assess which authors are represented the most in the corpus
+
+```{r authors_with_max_nb_docs}
+tib %>% 
+  arrange(desc(ndocs_weighted)) %>% 
+  head(10)
+```
+
+# Table tib_doc_keyword
+
+# Table tib_doc_word
