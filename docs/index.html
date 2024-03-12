@@ -82,12 +82,36 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-The bibou package can be used to format bibliographic exports from web of science. It helps formatting these exports into tables, either with
-    - one row per document (tib_doc), 
-    - one row per document*author (tib_doc_author),
-    - one row per document*keyword (tib_doc_keyword) or
-    - one row per document*word of abstract (tib_doc_word).    
-    It builds on packages bibliometrix, tidytext, and mixr.
+
+<div class="section level1">
+<div class="page-header"><h1 id="bibou-">bibou <img src="reference/figures/logo.png" align="right" height="139" alt=""><a class="anchor" aria-label="anchor" href="#bibou-"></a>
+</h1></div>
+<p>This package aims at formatting and using bibliographic data to produce a statistical and graphical analysis of a bibliometric corpus.</p>
+<p>The bibou package can be used to format bibliographic exports from web of science. It helps formatting these exports into tables, either with:</p>
+<ul>
+<li>
+<strong>tib_doc</strong>: one row per document,</li>
+<li>
+<strong>tib_doc_author</strong>: one row per document*author,</li>
+<li>
+<strong>tib_doc_keyword</strong>: one row per document*keyword</li>
+<li>
+<strong>tib_doc_word</strong>: one row per document*word of abstract</li>
+</ul>
+<p>The articles in the documentation then show how these tables can be used to produce bibliometric tables or graphics based on the <code>tidyverse</code> set of tools.</p>
+<p>It builds on packages <code>bibliometrix</code>, <code>tidytext</code>, and <code>mixr</code>.</p>
+</div>
+<div class="section level1">
+<h1 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h1>
+<p>Please install the bibou package with</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"lvaudor/bibou"</span>)</span></code></pre></div>
+<!-- ```{r build_index, include=FALSE} -->
+<!-- rmarkdown::render("README.Rmd",output_format="md_document",output_file="index.md") -->
+<!-- pkgdown::build_home() -->
+<!-- ``` -->
+</div>
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
