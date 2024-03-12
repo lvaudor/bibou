@@ -10,13 +10,13 @@
 bib_tib_doc_author<- function(tib_doc) {
   tib_doc_author=tib_doc %>%
     tidytext::unnest_tokens(output="AU",
-                  input="AU",
-                  token=stringr::str_split,
-                  pattern = ";",
-                  to_lower=FALSE) %>%
+                            input="AU",
+                            token=stringr::str_split,
+                            pattern = ";",
+                            to_lower=FALSE) %>%
     dplyr::group_by(id_doc) %>%
-    dplyr::mutate(AU_rank=1:n()) %>%
+    dplyr::mutate(AU_rank=1:dplyr::n()) %>%
     dplyr::ungroup() %>%
-    dplyr::select(id_doc,AU,AU_rank,everything())
+    dplyr::select(id_doc,AU,AU_rank,dplyr::everything())
   return(tib_doc_author)
 }
