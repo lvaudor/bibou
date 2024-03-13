@@ -25,9 +25,10 @@ Please install the bibou package with
 remotes::install_github("lvaudor/bibou")
 ```
 
-<!-- ```{r build_index, include=FALSE} -->
-<!-- rmarkdown::render("README.Rmd",output_format="md_document",output_file="index.md") -->
-<!-- pkgdown::build_home() -->
-<!-- ``` -->
+```{r build_index, include=FALSE}
+rmarkdown::render("README.Rmd",output_format="md_document",output_file="index.md")
+rmarkdown::render("README.Rmd",output_format="md_document",output_file="README.md")
+pkgdown::build_home()
+```
 
 
