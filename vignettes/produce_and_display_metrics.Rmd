@@ -164,6 +164,4 @@ mixr::plot_specificities(df_spec,DE,period)
 
 ```
 
- 
-
 # Table tib_doc_word

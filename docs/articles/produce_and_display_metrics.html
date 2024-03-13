@@ -91,35 +91,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">bibou</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://www.bibliometrix.org" class="external-link">bibliometrix</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; Please note that our software is open source and available for use, distributed under the MIT license.</span></span>
-<span><span class="co">#&gt; When it is used in a publication, we ask that authors properly cite the following reference:</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Aria, M. &amp; Cuccurullo, C. (2017) bibliometrix: An R-tool for comprehensive science mapping analysis, </span></span>
-<span><span class="co">#&gt;                         Journal of Informetrics, 11(4), pp 959-975, Elsevier.</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Failure to properly cite the software is considered a violation of the license.</span></span>
-<span><span class="co">#&gt;                         </span></span>
-<span><span class="co">#&gt; For information and bug reports:</span></span>
-<span><span class="co">#&gt;                         - Take a look at https://www.bibliometrix.org</span></span>
-<span><span class="co">#&gt;                         - Send an email to info@bibliometrix.org   </span></span>
-<span><span class="co">#&gt;                         - Write a post on https://github.com/massimoaria/bibliometrix/issues</span></span>
-<span><span class="co">#&gt;                         </span></span>
-<span><span class="co">#&gt; Help us to keep Bibliometrix and Biblioshiny free to download and use by contributing with a small donation to support our research team (https://bibliometrix.org/donate.html)</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;                         </span></span>
-<span><span class="co">#&gt; To start with the Biblioshiny app, please digit:</span></span>
-<span><span class="co">#&gt; biblioshiny()</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; ── <span style="font-weight: bold;">Attaching core tidyverse packages</span> ──────────────────────── tidyverse 2.0.0 ──</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">dplyr    </span> 1.1.4     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">readr    </span> 2.1.4</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">forcats  </span> 1.0.0     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">stringr  </span> 1.5.0</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">ggplot2  </span> 3.4.2     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tibble   </span> 3.2.1</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">lubridate</span> 1.9.2     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tidyr    </span> 1.3.0</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">purrr    </span> 1.0.1</span></span>
-<span><span class="co">#&gt; ── <span style="font-weight: bold;">Conflicts</span> ────────────────────────────────────────── tidyverse_conflicts() ──</span></span>
-<span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">filter()</span> masks <span style="color: #0000BB;">stats</span>::filter()</span></span>
-<span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">lag()</span>    masks <span style="color: #0000BB;">stats</span>::lag()</span></span>
-<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Use the conflicted package (<span style="color: #0000BB; font-style: italic;">&lt;http://conflicted.r-lib.org/&gt;</span>) to force all conflicts to become errors</span></span></code></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="table-tib_doc">Table tib_doc<a class="anchor" aria-label="anchor" href="#table-tib_doc"></a>
 </h2>
@@ -240,13 +212,13 @@ each publication’s authors list):</p>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html" class="external-link">geom_histogram</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_x_sqrt</a></span><span class="op">(</span>breaks<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">5</span>,<span class="fl">10</span>,<span class="fl">20</span>,<span class="fl">40</span>,<span class="fl">80</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></span></code></pre></div>
-<p><img src="produce_and_display_metrics_files/figure-html/nb_docs_per_author-1.png" width="700"></p>
+<p><img src="produce_and_display_metrics_files/figure-html/nb_docs_per_author-1.png" width="480"></p>
 </div>
 <div class="section level3">
 <h3 id="example-authors-with-the-most-documents">Example: authors with the most documents<a class="anchor" aria-label="anchor" href="#example-authors-with-the-most-documents"></a>
 </h3>
 <p>The table calculated above makes it possible to assess which authors
-are represented the most in the corpus</p>
+are represented the most in the corpus.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tib</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html" class="external-link">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html" class="external-link">desc</a></span><span class="op">(</span><span class="va">ndocs_weighted</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
@@ -269,6 +241,70 @@ are represented the most in the corpus</p>
 <div class="section level2">
 <h2 id="table-tib_doc_keyword">Table tib_doc_keyword<a class="anchor" aria-label="anchor" href="#table-tib_doc_keyword"></a>
 </h2>
+<p>The table produced by <code><a href="../reference/bib_tib_doc_keyword.html">bib_tib_doc_keyword()</a></code> is
+structured as **one row = one document*keyword**.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tib_doc_keyword</span><span class="op">=</span><span class="fu"><a href="../reference/bib_tib_doc_keyword.html">bib_tib_doc_keyword</a></span><span class="op">(</span><span class="va">tib_doc</span><span class="op">)</span></span></code></pre></div>
+<div class="section level3">
+<h3 id="most-frequent-keywords">Most frequent keywords<a class="anchor" aria-label="anchor" href="#most-frequent-keywords"></a>
+</h3>
+<p>This table can be used to produce a table and graphic showing the
+most frequently used keywords</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tib</span><span class="op">=</span><span class="va">tib_doc_keyword</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">DE</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise</a></span><span class="op">(</span>n<span class="op">=</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html" class="external-link">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html" class="external-link">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html" class="external-link">desc</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html" class="external-link">slice_max</a></span><span class="op">(</span><span class="va">n</span>,n<span class="op">=</span><span class="fl">20</span><span class="op">)</span></span>
+<span><span class="va">tib</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 20 × 2</span></span></span>
+<span><span class="co">#&gt;    DE                     n</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> <span style="color: #BB0000;">NA</span>                   581</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> RHONE RIVER          151</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> MEDITERRANEAN SEA     72</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> FRANCE                59</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> GULF OF LIONS         54</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> RHONE                 54</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> MEDITERRANEAN         49</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> SEDIMENT              48</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> RIVER                 43</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> CLIMATE CHANGE        35</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> FISH                  35</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> DISTURBANCE           28</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> HOLOCENE              28</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> ORGANIC MATTER        26</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">15</span> MACROINVERTEBRATES    25</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">16</span> SEDIMENTS             24</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">17</span> FLOODPLAIN            23</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">18</span> FLOODS                21</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">19</span> SEDIMENT TRANSPORT    21</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">20</span> CONNECTIVITY          20</span></span></code></pre></div>
+<p>The most frequent keywords can then be displayed as a graphic either
+directly through a ggplot2 plot or using package <a href="%60mixr%60">https://github.com/lvaudor/mixr</a>.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">mixr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/mixr/man/plot_frequencies.html" class="external-link">plot_frequencies</a></span><span class="op">(</span><span class="va">tib</span>,cat<span class="op">=</span><span class="va">DE</span>,frequency<span class="op">=</span><span class="va">n</span>,fill_fixed<span class="op">=</span><span class="st">"dark blue"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning: Removed 1 rows containing missing values (`geom_text()`).</span></span></code></pre></div>
+<p><img src="produce_and_display_metrics_files/figure-html/plot_most_frequent_keywords-1.png" width="700"></p>
+</div>
+<div class="section level3">
+<h3 id="keywords-specific-to-a-part-of-the-corpus">Keywords specific to a part of the corpus<a class="anchor" aria-label="anchor" href="#keywords-specific-to-a-part-of-the-corpus"></a>
+</h3>
+<p>One can also analyse the keywords which are specific to certain parts
+of the corpus. Let’s divide our present corpus into two parts, based on
+publication date:</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tib_doc_keyword</span><span class="op">=</span><span class="va">tib_doc_keyword</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>period<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/cut.html" class="external-link">cut</a></span><span class="op">(</span><span class="va">PY</span>,breaks<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1950</span>,<span class="fl">2000</span>,<span class="fl">2010</span>,<span class="fl">2024</span><span class="op">)</span>,</span>
+<span>                    labels<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"1950-2000"</span>,<span class="st">"2001-2010"</span>,<span class="st">"2011-2024"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>We will use package <a href="%60mixr%60">https://github.com/lvaudor/mixr</a> to calculate
+<strong>specificity scores</strong> of keywords regarding these
+periods.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_spec</span><span class="op">=</span><span class="fu">mixr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/mixr/man/tidy_specificities.html" class="external-link">tidy_specificities</a></span><span class="op">(</span><span class="va">tib_doc_keyword</span>,cat1<span class="op">=</span><span class="va">DE</span>,cat2<span class="op">=</span><span class="va">period</span>,top_spec<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="fu">mixr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/mixr/man/plot_specificities.html" class="external-link">plot_specificities</a></span><span class="op">(</span><span class="va">df_spec</span>,<span class="va">DE</span>,<span class="va">period</span><span class="op">)</span></span></code></pre></div>
+<p><img src="produce_and_display_metrics_files/figure-html/tib_doc_keyword_spec-1.png" width="700"></p>
+</div>
 </div>
 <div class="section level2">
 <h2 id="table-tib_doc_word">Table tib_doc_word<a class="anchor" aria-label="anchor" href="#table-tib_doc_word"></a>
