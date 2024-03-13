@@ -16,6 +16,8 @@ bib_tib_doc_keyword<- function(tib_doc) {
                   to_lower=FALSE) %>%
     dplyr::group_by(id_doc) %>%
     dplyr::ungroup() %>%
-    dplyr::select(id_doc,DE,everything())
+    dplyr::select(id_doc,DE,everything()) %>%
+    dplyr::mutate(DE=stringr::str_replace(DE,"^ ","")) %>%
+    dplyr::filter(!is.na(DE))
   return(tib_doc_keyword)
 }

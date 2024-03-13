@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, warning=FALSE, message=FALSE}
 library(bibou)
 library(bibliometrix)
 library(tidyverse)
@@ -97,7 +97,7 @@ This table enables to produce all kinds of summary statistics and graphics.
 
 For instance, we can display the **distribution of number of documents per author** (possibly weighted by the author's rank in each publication's authors list):
 
-```{r nb_docs_per_author}
+```{r nb_docs_per_author, fig.width=5, fig.height=3}
 tib=tib_doc_author %>% 
   group_by(AU) %>% 
   summarise(ndocs_weighted=sum(AU_rank),
@@ -110,7 +110,7 @@ ggplot(tib, aes(x=ndocs_weighted))+
 
 ## Example: authors with the most documents
 
-The table calculated above makes it possible to assess which authors are represented the most in the corpus
+The table calculated above makes it possible to assess which authors are represented the most in the corpus.
 
 ```{r authors_with_max_nb_docs}
 tib %>% 
@@ -119,5 +119,51 @@ tib %>%
 ```
 
 # Table tib_doc_keyword
+
+
+The table produced by `bib_tib_doc_keyword()` is structured as **one row = one document*keyword**.
+
+```{r tib_doc_keyword}
+tib_doc_keyword=bib_tib_doc_keyword(tib_doc)
+```
+
+## Most frequent keywords
+
+This table can be used to produce a table and graphic showing the most frequently used keywords
+
+```{r most_frequent_keywords}
+tib=tib_doc_keyword %>% 
+  group_by(DE) %>% 
+  summarise(n=n()) %>% 
+  arrange(desc(n)) %>% 
+  slice_max(n,n=20)
+tib
+```
+
+The most frequent keywords can then be displayed as a graphic either directly through a ggplot2 plot or using package [https://github.com/lvaudor/mixr](`mixr`).
+
+```{r plot_most_frequent_keywords}
+mixr::plot_frequencies(tib,cat=DE,frequency=n,fill_fixed="dark blue")
+```
+
+## Keywords specific to a part of the corpus
+ 
+One can also analyse the keywords which are specific to certain parts of the corpus. Let's divide our present corpus into two parts, based on publication date: 
+ 
+```{r tib_doc_keyword_period}
+tib_doc_keyword=tib_doc_keyword %>% 
+  mutate(period=cut(PY,breaks=c(1950,2000,2010,2024),
+                    labels=c("1950-2000","2001-2010","2011-2024")))
+```
+
+We will use package [https://github.com/lvaudor/mixr](`mixr`) to calculate **specificity scores** of keywords regarding these periods.
+
+```{r tib_doc_keyword_spec}
+df_spec=mixr::tidy_specificities(tib_doc_keyword,cat1=DE,cat2=period,top_spec=10)
+mixr::plot_specificities(df_spec,DE,period)
+
+```
+
+ 
 
 # Table tib_doc_word
