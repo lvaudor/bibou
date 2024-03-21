@@ -260,31 +260,30 @@ most frequently used keywords</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 20 × 2</span></span></span>
 <span><span class="co">#&gt;    DE                     n</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> <span style="color: #BB0000;">NA</span>                   581</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> RHONE RIVER          151</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> MEDITERRANEAN SEA     72</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> FRANCE                59</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> GULF OF LIONS         54</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> RHONE                 54</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> MEDITERRANEAN         49</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> SEDIMENT              48</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> RIVER                 43</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> CLIMATE CHANGE        35</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> FISH                  35</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> DISTURBANCE           28</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> HOLOCENE              28</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> ORGANIC MATTER        26</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">15</span> MACROINVERTEBRATES    25</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">16</span> SEDIMENTS             24</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">17</span> FLOODPLAIN            23</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">18</span> FLOODS                21</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">19</span> SEDIMENT TRANSPORT    21</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">20</span> CONNECTIVITY          20</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> RHONE RIVER          151</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> MEDITERRANEAN SEA     72</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> FRANCE                59</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> GULF OF LIONS         54</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> RHONE                 54</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> MEDITERRANEAN         49</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> SEDIMENT              48</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> RIVER                 43</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> CLIMATE CHANGE        35</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> FISH                  35</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> DISTURBANCE           28</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> HOLOCENE              28</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> ORGANIC MATTER        26</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> MACROINVERTEBRATES    25</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">15</span> SEDIMENTS             24</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">16</span> FLOODPLAIN            23</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">17</span> FLOODS                21</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">18</span> SEDIMENT TRANSPORT    21</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">19</span> CONNECTIVITY          20</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">20</span> GULF OF LION          19</span></span></code></pre></div>
 <p>The most frequent keywords can then be displayed as a graphic either
 directly through a ggplot2 plot or using package <a href="%60mixr%60">https://github.com/lvaudor/mixr</a>.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">mixr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/mixr/man/plot_frequencies.html" class="external-link">plot_frequencies</a></span><span class="op">(</span><span class="va">tib</span>,cat<span class="op">=</span><span class="va">DE</span>,frequency<span class="op">=</span><span class="va">n</span>,fill_fixed<span class="op">=</span><span class="st">"dark blue"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Warning: Removed 1 rows containing missing values (`geom_text()`).</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">mixr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/mixr/man/plot_frequencies.html" class="external-link">plot_frequencies</a></span><span class="op">(</span><span class="va">tib</span>,cat<span class="op">=</span><span class="va">DE</span>,frequency<span class="op">=</span><span class="va">n</span>,fill_fixed<span class="op">=</span><span class="st">"dark blue"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="produce_and_display_metrics_files/figure-html/plot_most_frequent_keywords-1.png" width="700"></p>
 </div>
 <div class="section level3">

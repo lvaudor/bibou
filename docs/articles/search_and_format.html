@@ -152,11 +152,11 @@ bibou’s function <code><a href="../reference/bib_merge_files.html">bib_merge_f
 <code class="sourceCode R"><span><span class="va">bibtex_file_1</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"savedrecs(1).bib"</span>,package<span class="op">=</span><span class="st">"bibou"</span><span class="op">)</span></span>
 <span><span class="va">bibtex_files</span><span class="op">=</span><span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html" class="external-link">map_chr</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span>,<span class="op">~</span><span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_replace.html" class="external-link">str_replace</a></span><span class="op">(</span><span class="va">bibtex_file_1</span>,<span class="st">"1(?=\\).bib)"</span>,<span class="va">.x</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">bibtex_files</span></span>
-<span><span class="co">#&gt; [1] "/tmp/RtmpMHeT5l/temp_libpath73acc7198a4/bibou/savedrecs(1).bib"</span></span>
-<span><span class="co">#&gt; [2] "/tmp/RtmpMHeT5l/temp_libpath73acc7198a4/bibou/savedrecs(2).bib"</span></span>
-<span><span class="co">#&gt; [3] "/tmp/RtmpMHeT5l/temp_libpath73acc7198a4/bibou/savedrecs(3).bib"</span></span>
-<span><span class="co">#&gt; [4] "/tmp/RtmpMHeT5l/temp_libpath73acc7198a4/bibou/savedrecs(4).bib"</span></span>
-<span><span class="co">#&gt; [5] "/tmp/RtmpMHeT5l/temp_libpath73acc7198a4/bibou/savedrecs(5).bib"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/RtmpWs9RVN/temp_libpath84cc28429a80/bibou/savedrecs(1).bib"</span></span>
+<span><span class="co">#&gt; [2] "/tmp/RtmpWs9RVN/temp_libpath84cc28429a80/bibou/savedrecs(2).bib"</span></span>
+<span><span class="co">#&gt; [3] "/tmp/RtmpWs9RVN/temp_libpath84cc28429a80/bibou/savedrecs(3).bib"</span></span>
+<span><span class="co">#&gt; [4] "/tmp/RtmpWs9RVN/temp_libpath84cc28429a80/bibou/savedrecs(4).bib"</span></span>
+<span><span class="co">#&gt; [5] "/tmp/RtmpWs9RVN/temp_libpath84cc28429a80/bibou/savedrecs(5).bib"</span></span>
 <span><span class="fu"><a href="../reference/bib_merge_files.html">bib_merge_files</a></span><span class="op">(</span><span class="va">bibtex_files</span>,</span>
 <span>                to<span class="op">=</span><span class="st">"data/savedrecs_merged.bib"</span><span class="op">)</span></span></code></pre></div>
 <p>When exporting from Web of Science in several batches, one can

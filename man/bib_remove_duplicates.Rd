@@ -4,12 +4,12 @@
 \alias{bib_remove_duplicates}
 \title{This function removes entries with the same key in a .bib file and writes a new .bib file}
 \usage{
-bib_remove_duplicates(bibtex_file, suffix = "_clean")
+bib_remove_duplicates(from_file, to_file = "savedrecs_clean.bib")
 }
 \arguments{
-\item{bibtex_file}{the path to the .bib file}
+\item{from_file}{the path to the .bib file}
 
-\item{suffix}{the suffix to use to create new .bib file (the new file name will be bibtex_file_\{suffix\}). Defaults to "_clean"}
+\item{to_file}{the file with no duplicates created}
 }
 \value{
 nothing
