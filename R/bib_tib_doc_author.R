@@ -15,8 +15,10 @@ bib_tib_doc_author<- function(tib_doc) {
                             pattern = ";",
                             to_lower=FALSE) %>%
     dplyr::group_by(id_doc) %>%
+    dplyr::mutate(n_authors=dplyr::n()) %>%
     dplyr::mutate(AU_rank=1:dplyr::n()) %>%
+    dplyr::mutate(AU_weight=2*(n_authors-AU_rank+1)/(n_authors*(n_authors+1))) %>%
     dplyr::ungroup() %>%
-    dplyr::select(id_doc,AU,AU_rank,dplyr::everything())
+    dplyr::select(id_doc,AU,AU_rank,AU_weight,dplyr::everything())
   return(tib_doc_author)
 }
