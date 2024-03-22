@@ -4,7 +4,7 @@
 \alias{bib_tib_doc}
 \title{This function reads bib entries from a .bib file and formats them for later use with package bibou}
 \usage{
-bib_tib_doc(bibtex_file, check_in_text = NULL)
+bib_tib_doc(bibtex_file, check_in_text = NULL, add_LC = TRUE)
 }
 \arguments{
 \item{bibtex_file}{the path to the .bib file}

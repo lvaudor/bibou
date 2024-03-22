@@ -7,7 +7,7 @@
 #' bib_tib_doc(bibtex_file)
 #' @export
 
-bib_tib_doc <- function(bibtex_file, check_in_text=NULL) {
+bib_tib_doc <- function(bibtex_file, check_in_text=NULL, add_LC=TRUE){
   tib_doc=bibliometrix::convert2df(file = bibtex_file,
                   dbsource = "isi",
                   format = "bibtex")%>%
@@ -22,5 +22,10 @@ bib_tib_doc <- function(bibtex_file, check_in_text=NULL) {
         dplyr::filter(check) %>%
         dplyr::select(-texts,check)
     }
+   if(add_LC){
+     tib_doc=tib_doc %>%
+       dplyr::mutate(LC=purrr::map_int(id_doc,
+                                       ~length(which(stringr::str_detect(tib_doc$CR,.x)))))
+   }
   return(tib_doc)
 }

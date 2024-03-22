@@ -21,3 +21,6 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+Depends: 
+    mixr,
+    R (>= 2.10)
